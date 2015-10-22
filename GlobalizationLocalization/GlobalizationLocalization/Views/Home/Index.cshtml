@@ -1,0 +1,24 @@
+﻿@using GlobalizationLocalization.Models
+@using MyResources
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>@Resources.Listing</h2>
+
+@if (ViewBag.List.Count > 0)
+{
+    <ul>
+        @foreach (Demo demo in ViewBag.List)
+        {
+            <li>Name: @demo.Name | Age: @demo.Age</li>
+        }
+    </ul>
+}
+else
+{
+    <p>@Resources.EmptyList</p>
+}
+
+<a class="btn btn-primary" href="@Url.Action("Create")">@Resources.AddNewItem</a>
